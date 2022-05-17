@@ -1,9 +1,7 @@
-#include <iostream>
+#include "client.h"
 
-using namespace std;
-
-int main()
+int main( void )
 {
-    cout << "Hello World!" << endl;
-    return 0;
+    client c1;
+    c1.startClient();
 }
