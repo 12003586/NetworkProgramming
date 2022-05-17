@@ -1,9 +1,14 @@
+#include <stdio.h>
+#include "server.h"
 #include <iostream>
+#include <string.h>
 
-using namespace std;
+#include <zmq.hpp>
 
-int main()
+
+int main( void )
 {
-    cout << "Hello World!" << endl;
-    return 0;
+    Server * s1 = new Server();
+    s1->serverStart();
+
 }
