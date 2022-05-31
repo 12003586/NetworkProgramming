@@ -74,7 +74,7 @@ void Server::serverStart()
 
 
               text =  std::string( (char*) msg->data(),msg->size() );
-              textParsed = text.substr(text.find("?>Dates") + 8);
+              textParsed = text.substr(text.find("?>Numbers") + 8);
               USERID = textParsed.substr(0, textParsed.find(">"));
 
               if ((USERID.length() >=9 or USERID.length() <= 7)  and USERID.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890") != std::string::npos)
