@@ -12,6 +12,7 @@ public:
     void startClient();
     void bet();
     void roll();
+    int randomNumber();
 
 
     char service[101];
@@ -20,6 +21,8 @@ public:
     char naam2[101];
     char kleur[101];
     int nummer;
+    int geld;
+
 
      std::string sendtpic;
 
