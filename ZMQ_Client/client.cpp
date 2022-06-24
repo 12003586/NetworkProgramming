@@ -1,3 +1,19 @@
+//Examenvraag1
+/*meerdere clients verschillende bedragen op verschillende nummers(Roulette>clientID>gok>geld)
+ *Server houd dit allemaal bij tot er (roulette>holdbets) gestuurd word
+ *server zal alle inzet geven aan de spelers die juist waren(roulette>pay>clientID>geld
+*/
+
+/*Examenvraag 2
+ * mogelijkheid dat er meerdere parallelle tafels bestaan (roulette>join>tableID>clientID)
+ * bepaalde pot in totaal om van te spelen op alle tafels
+ * kicken als er geen geld meer is(roulette>kick>clientID)
+*/
+
+
+
+
+
 #include "client.h"
 
 client::client()
