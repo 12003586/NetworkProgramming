@@ -12,7 +12,7 @@ public:
     void startClient();
     void bet();
     void roll();
-    int randomNumber();
+
 
 
     char service[101];

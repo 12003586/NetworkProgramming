@@ -52,27 +52,8 @@ void client::startClient()
 
             if (!strcmp(service, "Roulette"))
             {
-
-                printf("want to bet on color or numbers?\n\r");
-                scanf("%100s", keuze);
-                if (!strcmp(keuze, "color"))
-                {
-                    printf("pick a color: black or red\n\r");
-                    scanf("%100s \n\r", kleur);
-                    sendtpic = "BoMengels>Roulette?>Color>";
-                    std::string var = sendtpic + kleur;
-                    std::cout << "Follow this command: " << var;
-                    pusher.send(var.c_str(), var.length());
-
-                }
-                else if (!strcmp(keuze, "numbers"))
-                {
-                    bet();
-                }
-           }
-
-
-
+                bet();
+            }
         }
     }
     catch( zmq::error_t & ex )
@@ -87,9 +68,24 @@ void client::startClient()
 
 void client::bet()
 {
-    printf("Give a number\n\r");
-    scanf("%d \n\r", nummer);
-    sendtpic = "BoMengels>Roulette?>Numbers>";
+    printf("want to bet on color or numbers?\n\r");
+    scanf("%100s", keuze);
+    if (!strcmp(keuze, "color"))
+    {
+        printf("pick a color: black or red\n\r");
+        scanf("%100s \n\r", kleur);
+        sendtpic = "BoMengels>Roulette?>Color>";
+        std::string var = sendtpic + kleur;
+        std::cout << "Follow this command: " << var;
+        pusher.send(var.c_str(), var.length());
+
+    }
+    else if (!strcmp(keuze, "numbers"))
+    {
+        printf("Give a number\n\r");
+        scanf("%d \n\r", nummer);
+        sendtpic = "BoMengels>Roulette?>Numbers>";
+    }
 
     printf("place your bet\n\r");
     scanf("%d \n\r", geld);
@@ -98,12 +94,9 @@ void client::bet()
 
 void client::roll()
 {
-    test
-}
-
-int randomNumber()
-{
     int randomGetal =  (rand() % 100);
-
-    return randomGetal;
+    printf("Number is %d\n\r",randomGetal);
 }
+
+
+
