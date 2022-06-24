@@ -98,7 +98,7 @@ void client::bet()
 
 void client::roll()
 {
-
+    test
 }
 
 int randomNumber()
