@@ -45,8 +45,8 @@ void client::startClient()
         {
             char service[101];
             printf("what service do you want? (Roulette) \n\r");
-//            sendtpic = "BoMengels>Roulette?>Start";
-//            pusher.send(sendtpic.c_str(), sendtpic.length());
+            sendtpic = "BoMengels>Roulette?>Start";
+            pusher.send(sendtpic.c_str(), sendtpic.length());
             scanf("%100s", service);
 
 
@@ -67,16 +67,7 @@ void client::startClient()
                 }
                 else if (!strcmp(keuze, "numbers"))
                 {
-
-                    printf("Give a number\n\r");
-                    scanf("%100s \n\r", nummer);
-                    sendtpic = "BoMengels>Roulette?>Numbers>";
-                    /*
-                    std::string var = sendtpic + date1 + ">>" + date2;
-                    std::cout << "Follow this command: " << var;
-                    pusher.send(var.c_str(), var.length());
-                    */
-
+                    bet();
                 }
            }
 
@@ -96,10 +87,23 @@ void client::startClient()
 
 void client::bet()
 {
+    printf("Give a number\n\r");
+    scanf("%d \n\r", nummer);
+    sendtpic = "BoMengels>Roulette?>Numbers>";
 
+    printf("place your bet\n\r");
+    scanf("%d \n\r", geld);
+    sendtpic = "BoMengels>Roulette?>Geld>";
 }
 
 void client::roll()
 {
 
+}
+
+int randomNumber()
+{
+    int randomGetal =  (rand() % 100);
+
+    return randomGetal;
 }
